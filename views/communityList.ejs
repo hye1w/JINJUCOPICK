@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>진주커Pick</title>
+    <link rel="stylesheet"  type="text/css" href="public\css\header.css" />
+    <link rel="stylesheet"  type="text/css" href="public\css\communityList.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="logo_back">
+        <div class="side_menu">
+            <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                <input type="button" value="" class="bookmark-btt">
+            </label>
+            <section class="side_section">
+                <ul class="bookmark-lists">
+                    <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                    <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                    <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                    <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                    <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                </ul>
+                <div class="info"><hr>경상국립대학교 얼죽아
+                    <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                </div>
+            </section>
+        </div>
+        <script src="public\js\index.js"></script>
+        <div class="main_logo"> 
+            <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+        </div>  
+    </div>
+
+    <div class="wrap"> 
+        <div class="board_title">
+            <i class="material-symbols-outlined" id="commu_icon">chat</i>
+            <span class="commu_title">커뮤니티</span>
+            <div class="sub_title">진주 카페 정복하기</div>
+        </div>
+
+        <div class="board_wrap">
+            <table class="board_list">
+                <colgroup>
+                    <col width="5%">
+                    <col width="50%">
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="15%">
+                </colgroup>
+                
+                <tr class="list_title">
+                    <th class="write_no">no</td>
+                    <th class="write_title">제목</th>
+                    <th class="write_nickname">글쓴이</th>
+                    <th class="write_date">만남 날짜</th>
+                    <th class="write_purpose">목적</th>
+                </tr>
+
+                  <% for(let i =0; i<data.length;i++){%>
+                    <% var list = data[i] %>  
+                    <% var index = totalCount - (5 * (currentPage - 1) + i) %> 
+                    <% var today = new Date() %>
+                    <% var date = new Date(list.date) %>
+                    
+                    <tr class="content_list <%= (date < today) ? 'past-date' : '' %>" onclick= "location.href='/community/<%= list.nickname %>/<%= list.writeTime %>/<%= list.num %>'"> 
+                    <td class="no">
+                        <%= index %>
+                    </td>
+                    <td class="title" name="title">
+                        <%= list.title %> 
+                    </td>
+                    <td class="nickname" name="nickname">
+                        <%= list.nickname %>
+                    </td>
+                    <td class="date" name="date">
+                        <%= list.date %>
+                    </td>
+                    <td class="purpose" name="purpose">
+                        <% if(list.purpose === 'study') { %>
+                            스터디
+                        <% } else if (list.purpose === 'friendship') { %>
+                            친목
+                        <% } else if (list.purpose === 'else'){ %>
+                            기타
+                        <% } %>
+                    </td>
+                </tr>
+                <%}%>
+            </table>
+            <div id="no_list" <% if (data.length > 0) { %>style="display:none"<% } %>>작성된 글이 없습니다.</div>
+        </div>
+
+    <!-- 페이징 -->
+    <ul class="pagination">
+        <% if (currentPage > 1) { %>
+        <li class="page-item">
+            <a class="page-link" href="/community?page=<%= Math.floor(currentPage - 1) %>">이전</a>
+        </li>
+        <% } %>
+        <% for (let i = Math.floor((currentPage - 1) / 3) * 3 + 1; i <= Math.min(Math.floor((currentPage - 1) / 3) * 3 + 3, pageCount); i++) { %>
+        <li class="page-item <%= i === currentPage ? 'active' : '' %>">
+            <a class="page-link" href="/community?page=<%= i %>"><%= i %></a>
+        </li>
+        <% } %>
+        <% if (currentPage < pageCount) { %>
+        <li class="page-item">
+            <a class="page-link" href="/community?page=<%= currentPage + 1 %>">다음</a>
+        </li>
+        <% } %>
+    </ul>
+        <a href="/community/write"><button class="write_bt">글 쓰기</button></a> 
+    </div>   
+</body>
+</html>

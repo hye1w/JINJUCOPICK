@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>진주커pick</title>
+    <link rel="stylesheet"  type="text/css" href="/public/css/nickname_change.css" />
+</head>
+
+<body>
+    <script>
+        function checkNickname(){
+            let nickname = document.getElementById("nickname").value
+
+            // 닉네임 확인 (2~8자)
+            if(nickname === ""){
+                    document.getElementById("nicknameError").innerHTML = "닉네임을 입력해주세요."
+                    return false;
+                } else if((nickname.length < 2) || (nickname.length > 8)) {
+                    document.getElementById("nicknameError").innerHTML = "2~8자로 입력해주세요."
+                    return false;
+                } else {
+                    document.getElementById("nicknameError").innerHTML = "&nbsp"
+                }
+
+        }
+    </script>
+
+    <div class="top"><strong>닉네임 변경</strong></div>
+    <div class="middle">
+        <form onsubmit="return checkNickname()" action='/mypage/nickname/change' method="post" autocomplete=off>
+        <div>
+            <div class="nickname">
+                <input type="text" id="nickname" name="nickname" placeholder="새 닉네임">
+                <div id="nicknameError" class="error">&nbsp</div>
+            </div>
+            <div class="check">
+                <input type="submit" id="check" value="변경">
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

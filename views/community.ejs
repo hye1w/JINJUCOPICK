@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>진주커Pick</title>
+
+    <link rel="stylesheet"  type="text/css" href="/public\css\community.css" />
+    <link rel="stylesheet"  type="text/css" href="/public\css\header.css" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <div class="logo_back">
+        <div class="side_menu">
+            <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                <input type="button" value="" class="bookmark-btt">
+            </label>
+            <section class="side_section">
+                <ul class="bookmark-lists">
+                    <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                    <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                    <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                    <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                    <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                </ul>
+                <div class="info"><hr>경상국립대학교 얼죽아
+                    <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                </div>
+            </section>
+        </div>
+        <script src="/public\js\index.js"></script>
+        <div class="main_logo"> 
+            <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+        </div>  
+    </div>
+
+    <div class="community">
+        <i class="material-symbols-outlined" id="commu_icon">chat</i>
+        커뮤니티
+    </div>
+
+    <div class="container">
+        <div class="posting-box">
+            <form name="main_title" class="form-group" action = "/community/write/submit" method="post">
+                <input type="text" class="form-control" id="title" placeholder="제목" name="title" maxlength="50" required pattern=".{1,50}">
+
+                <div class="details">
+                    <div class="detail_1">
+                        <label class="people">인원</label>
+                        <input type="number" min="1" max="20" step="1" placeholder="인원" id="people_num" name="people" required>
+                    </div>
+                        
+                    <div class="detail_2">
+                        <label class="purpose" for="purpose_list">목적</label>
+                        <select class="form-control" id="purpose_list" name="purpose" required> 
+                            <option value="" disabled selected hidden>목적</option>
+                            <option value="study">스터디</option>
+                            <option value="friendship">친목</option>
+                            <option value="else">기타</option>
+                        </select>
+                    </div>
+                    
+                    <div class="detail_3">
+                        <label class="date">날짜</label> 
+                        <input type="date" class="date_pick"
+                            id="date_input" 
+                            data-placeholder="연도-월-일"
+                            value={startDateValue}
+                            name="date"
+                            onchange="toggleCheckbox()" 
+                            required="required"/>
+
+                        <div class="nodate_pick">
+                            <input type="checkbox" 
+                                id="no_date" 
+                                value="미정"
+                                name="date"
+                                onchange="toggleCalendar()" />
+                            <label for="no_date">미정</label>
+                        </div> 
+                </div>
+            </div>
+                <textarea class="form-control" id="content" rows="8" placeholder="내용" name="content" required maxlength="700"></textarea>
+                <div id="error_message" style="display: none; margin:-30px 0px 0px 10px;color:red">모든 값을 양식에 맞춰 입력하세요.</div>
+            <div class="final_bt">
+                <input type="submit" class="save" value="등록" id="submit_button"> 
+                <a href="/community" class="reset">취소</a>
+            </div>
+        </form>
+        </div>
+    </div>
+    <script src="/public\js\community.js"></script>
+</body>
+</html>

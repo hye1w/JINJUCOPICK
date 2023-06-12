@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>진주커pick</title>
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+        <link rel="stylesheet"  type="text/css" href="public\css\header.css" />
+        <link rel="stylesheet"  type="text/css" href="public\css\signup.css">
+    </head>
+
+    <body>
+        <script src="https://kit.fontawesome.com/a064522756.js" crossorigin="anonymous"></script>
+        <div class="logo_back">
+            <div class="side_menu">
+                <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                    <input type="button" value="" class="bookmark-btt" style="background-color: pink";>
+                </label>
+                <section class="side_section">
+                    <ul class="bookmark-lists">
+                        <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                        <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/login">로그인</span></a></li>
+                        <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                        <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>     
+                    </ul>
+                    <div class="info"><hr>경상국립대학교 얼죽아
+                        <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                    </div>
+                </section>
+            </div>
+            <script src="public\js\index.js"></script>
+            <div class="main_logo"> 
+                <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+            </div>  
+        </div>
+
+        <script>
+            function check(){
+                let email = document.getElementById("email").value
+                let password1 = document.getElementById("password1").value
+                let password2 = document.getElementById("password2").value
+                let nickname = document.getElementById("nickname").value
+
+                // 이메일 확인
+                if(email.includes("@")){
+                    let emailFront = email.split("@")[0]
+                    let emailSBack = email.split("@")[1]
+                    if(emailFront === "" || emailSBack === ""){
+                        document.getElementById("emailError").innerHTML = "이메일 형식으로 입력해주세요."
+                        return false;
+                    } else{
+                        document.getElementById("emailError").innerHTML = "&nbsp"
+                    }
+                } else{
+                    document.getElementById("emailError").innerHTML = "이메일 형식으로 입력해주세요."
+                    return false;
+                }
+
+                // 비밀번호 확인 (영문+숫자+특수문자 8~15자)
+                var pwCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=~])(?=.*[0-9]).{8,15}$/;
+                if(password1 === ""){
+                    document.getElementById("password1Error").innerHTML = "비밀번호를 입력해주세요."
+                    return false;
+                } else if((password1.length < 8) || (password1.length > 15)) {
+                    document.getElementById("password1Error").innerHTML = "영문, 숫자, 특수문자를 포함하여 8~15자로 입력해주세요."
+                    return false;
+                } else if(!pwCheck.test(password1)) {
+                    document.getElementById("password1Error").innerHTML = "영문, 숫자, 특수문자를 포함하여 8~15자로 입력해주세요."
+                    return false;
+                } else {
+                    if (password2 === ""){
+                        document.getElementById("password1Error").innerHTML = "&nbsp"
+                        document.getElementById("password2Error").innerHTML = "비밀번호를 입력해주세요."
+                        return false;
+                    } else if (password1 !== password2){
+                        document.getElementById("password1Error").innerHTML = "&nbsp"
+                        document.getElementById("password2Error").innerHTML = "비밀번호가 일치하지 않습니다."
+                        return false;
+                    } else {
+                        document.getElementById("password2Error").innerHTML = "&nbsp"
+                    }
+                }
+                
+                // 닉네임 확인 (2~8자)
+                if(nickname === ""){
+                    document.getElementById("nicknameError").innerHTML = "닉네임을 입력해주세요."
+                    return false;
+                } else if((nickname.length < 2) || (nickname.length > 8)) {
+                    document.getElementById("nicknameError").innerHTML = "2~8자로 입력해주세요."
+                    return false;
+                } else {
+                    document.getElementById("nicknameError").innerHTML = "&nbsp"
+                }
+            }   
+        </script>
+
+        <form onsubmit="return check()" action="/signup/submit" method="post" autocomplete=off>
+            <div class="container">
+                <div class="title">
+                     회원가입
+                </div> 
+                <div class="email">
+                    <div class="input_title">이메일</div>
+                    <input class="input" id="email" name ="email" type="text" placeholder="jinju@copick">
+                    <div id="emailError" class="error">&nbsp</div>
+                </div>
+                <div class="password1">
+                    <div class="input_title">비밀번호</div>
+                    <input class="input" id="password1" name ="password1" type="password" placeholder="비밀번호 (8-15자 / 영문자+숫자+특수문자)">
+                    <div id="password1Error" class="error">&nbsp</div>
+                </div>
+                <div class="password2">
+                    <div class="input_title">비밀번호 확인</div>
+                    <input class="input" id="password2" name ="password2" type="password" placeholder="비밀번호 일치 확인">
+                    <div id="password2Error" class="error">&nbsp</div>
+                </div>
+                <div class="nickname">
+                    <div class="input_title">닉네임</div>
+                    <input class="input" id="nickname" name ="nickname" type="text" placeholder="닉네임 (2-8자 / 영문,숫자,한글,특수문자)">
+                    <div id="nicknameError" class="error">&nbsp</div>
+                </div>
+                <div class="signup">
+                    <input type="submit" id ="signup" value="가입하기">
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>진주커pick</title>
+    
+    <link rel="stylesheet"  type="text/css" href="/public/css/header.css">
+    <link rel="stylesheet"  type="text/css" href="/public/css/cafe_list.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />  
+</head>
+<body>
+    <div class="logo_back">
+        <div class="side_menu">
+            <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                <input type="button" value="" class="bookmark-btt">
+            </label>
+            <section class="side_section">
+                <ul class="bookmark-lists">
+                    <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                    <% var login = data1%>
+                    <% if(login.login==1){%>
+                        <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                    <%} else {%>
+                        <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/login">로그인</span></a></li>
+                    <%}%>
+                    <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                    <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                    <% if(login.login==1){%>
+                        <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                    <%}%>
+                </ul>
+                <div class="info"><hr>경상국립대학교 얼죽아
+                    <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                </div>
+            </section>
+        </div>
+        <script src="public\js\index.js"></script>
+        <div class="main_logo"> 
+            <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+        </div>  
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9d1355c19666c5197b4f39cb9f886798"></script>
+
+    <form id="list_container">
+        <div id="map">
+        </div>
+        <div id="list_box">
+            <script>
+                const positions = []  //마커 추가
+            </script>
+            <% var map = [] %>
+            <% for(var i = 0; i < cafe.length; i++){%>
+                <% map.push(cafe[i]) %>
+            <%}%>    
+
+            <!-- area 고유값 찾기/ 구역별 분류 -->
+            <% var set1 = [] %>    
+            <% for(let i = 0; i < cafe.length; i++) { %> 
+                <% var cafelist = cafe[i] %> 
+                <% set1.push(cafelist.area) %>
+            <%}%>
+            <% var set2 = new Set(set1) %>
+            <% var uniqueArea = [...set2] %>
+
+            <% for(var j = 0; j < uniqueArea.length; j++) { %>
+                <div class="cafe_area"> · <%= uniqueArea[j]%></div>
+                <% for(var i = 0; i < cafe.length; i++) { %>
+                    <% var cafelist = cafe[i] %>
+                    <% if(uniqueArea[j] == cafelist.area) { %>
+                    <table class="cafe_list">
+                        <tr> 
+                            <td class="info_box" onclick="location.href='/cafe_info/<%= cafelist.cafename %>'">
+                                <span class="cafeName"><%= cafelist.cafename %></span> 
+                                <% if (cafelist.count !== 0 && cafelist.average === 0) { %>
+                                    <span class="cafeAverage">★</span>
+                                    <span class="cafeAverageNumber">0</span><span class="slice">/5</span>
+                                <% } else if (cafelist.count !== 0 && cafelist.average !== 0) { %>
+                                    <span class="cafeAverage">★</span>
+                                    <span class="cafeAverageNumber"><%= cafelist.average.toFixed(1) !== '0.0' ? cafelist.average.toFixed(1) : '0' %></span><span class="slice">/5</span>
+                                <% } %>
+                                                                  
+                                <div class="filtering"> 
+                                    <% for (let c = 0; c < cafelist.correct.length; c++) { %>                         
+                                        <div class="filter"><%= cafelist.correct[c] %></div>
+                                    <% } %>     
+                                </div>
+                                
+                                <div class="cafeAddress"><%= cafelist.location %></div>
+                            </td>
+                            <td class="view">
+                                <div class="viewLocation" onclick="event.stopPropagation()">위치 보기</div>
+                            </td>
+                        </tr>
+                    </table>
+            <script>
+                positions.push({
+                    title: "<%= cafelist.cafename %>",
+                    latlng: new kakao.maps.LatLng("<%= cafelist.xlocation %>","<%= cafelist.ylocation %>")
+                });
+                console.log(positions.length)
+                
+                for (var i = 0; i < positions.length; i++) {
+                    var markerPosition = new kakao.maps.LatLng(positions[i].latlng.getLat(), positions[i].latlng.getLng());
+                    console.log(positions[i].latlng.getLat(), positions[i].latlng.getLng(), positions[i].title);
+                }
+            </script>
+      
+            <% }}} %>
+            
+            <script>
+                var mapContainer = document.getElementById('map'),
+                    mapOption = { 
+                        center: new kakao.maps.LatLng(positions[0].latlng.getLat(), positions[0].latlng.getLng()), // 지도의 중심좌표
+                        level: 4 // 지도의 확대 레벨
+                    };
+
+                var kakaomap = new kakao.maps.Map(mapContainer, mapOption);     // 지도 생성
+
+                // 마커 추가
+                var currentInfowindow = null;
+
+                for (var i = 0; i < positions.length; i++) {
+                    var marker = new kakao.maps.Marker({
+                        map: kakaomap,
+                        position: positions[i].latlng
+                    });
+ 
+                    var iwContent = '<div class="cafe_title">' + positions[i].title + '</div>',
+                        iwPosition = positions[i].latlng;           //인포윈도우 표시할 위치
+                        iwRemoveable = true;                        //닫을 수 있는 x버튼이 표시
+
+                    var infowindow = new kakao.maps.InfoWindow({
+                        position: iwPosition,
+                        content: iwContent,
+                        removable : iwRemoveable
+                    });
+
+                    kakao.maps.event.addListener(marker, 'click', (function(marker, infowindow) {
+                        return function() {
+                            // 열려있는 인포윈도우가 있으면 닫음
+                            if (currentInfowindow) {
+                                currentInfowindow.close();
+                            }
+
+                            // 클릭한 마커 인포윈도우를 열기
+                            infowindow.open(kakaomap, marker);
+
+                            // 현재 열려있는 인포윈도우 업데이트
+                            currentInfowindow = infowindow;
+                        };
+                    })(marker, infowindow));
+                }
+
+                // 지도 중심 좌표 변경
+                var viewLocations = document.querySelectorAll('.viewLocation');
+                for (var i = 0; i < viewLocations.length; i++) {
+                    (function(index) {        
+                        var viewLocation = viewLocations[index];
+                        viewLocation.addEventListener('click', function() {
+                            var position = positions[index].latlng;
+                            kakaomap.setCenter(position);           // 지도의 중심 좌표를 해당 위치로 설정
+                            kakaomap.setLevel(2);       //확대
+
+                            //해당 위치 인포윈도우 열기
+                            if (currentInfowindow) {
+                                currentInfowindow.close();
+                            }
+                            var marker = new kakao.maps.Marker({
+                                position: position
+                            });
+
+                            var iwContent = '<div class="cafe_title">' + positions[index].title + '</div>',
+                            iwRemoveable = true; 
+
+                            var infowindow = new kakao.maps.InfoWindow({
+                                position: position,
+                                content: iwContent,
+                                removable : iwRemoveable
+                            });
+                            infowindow.open(kakaomap, marker);
+                            currentInfowindow = infowindow;
+                        });
+                    })(i);
+                }
+            </script>   
+        </div>
+    </form>
+</body>
+</html>

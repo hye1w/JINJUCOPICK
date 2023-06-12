@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>진주커pick</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <link rel="stylesheet"  type="text/css" href="/public\css\header.css" />
+        <link rel="stylesheet"  type="text/css" href="/public\css\mypage.css" />
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    </head>
+    <body style="overflow-x: hidden">
+        <script src="https://kit.fontawesome.com/a064522756.js" crossorigin="anonymous"></script>
+        <div class="logo_back">
+            <div class="side_menu">
+                <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                    <input type="button" value="" class="bookmark-btt">
+                </label>
+                <section class="side_section">
+                    <ul class="bookmark-lists">
+                        <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                        <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                        <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                        <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                        <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                    </ul>
+                    <div class="info"><hr>경상국립대학교 얼죽아
+                        <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                    </div>
+                </section>
+            </div>
+            <script src="public\js\index.js"></script>
+            <div class="main_logo"> 
+                <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+            </div>  
+        </div>
+<script>
+    function openPage1(){
+        window.open("/mypage/nickname", "password_check", "width = 500, height = 450, top =" + ((window.screen.height - 450) / 2) + ", left = " + ((window.screen.width - 500) / 2));
+    }
+
+    function openPage2(){
+        window.open("/mypage/password", "password_check", "width = 500, height = 450, top =" + ((window.screen.height - 450) / 2) + ", left = " + ((window.screen.width - 500) / 2));
+    }
+</script>
+
+    <% var info = data[0] %>
+    <div class="main_container">
+        <p id="title">마이페이지</p>
+        <form method="post">
+            <table>
+                <tr>
+                    <th style="text-align: center;">이메일</th>
+                    <td><input type="email" id="email" name="email" value="<%= info.email %>" disabled></td>
+                </tr>
+                <tr>
+                    <th style="text-align: center;">닉네임</th>
+                    <td><input type="text" id="nickname" name="nickname" value="<%= info.nickname%>" disabled> <input type="button" value="변경" id="nickname_change" onclick="openPage1()"></td>
+                </tr>
+                    <th style="text-align: center;">비밀번호</th>
+                    <td><input type="password" id="password" name="password" value="example" disabled> <input type="button" value="변경" id="password_change" onclick="openPage2()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="div_logout">
+        <form method="post">
+            <a href="/logout"><input type="button" id="logout" value="로그아웃"></a>
+        </form>
+    </div>
+</body>
+</html>

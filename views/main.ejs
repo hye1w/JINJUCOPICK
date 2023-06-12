@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진주커pick</title>
+    <link rel="stylesheet"  type="text/css" href="public\css\header.css" />
+    <link rel="stylesheet" type="text/css" href="public\css\main.css"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="logo_back">
+        <div class="side_menu">
+            <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                <input type="button" value="" class="bookmark-btt";>
+            </label>
+            <section class="side_section">
+                <ul class="bookmark-lists">
+                    <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                    <% var login = data1%>
+                    <% if(login.login==1){%>
+                        <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                    <%} else {%>
+                        <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/login">로그인</span></a></li>
+                    <%}%>
+                    <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                    <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                    <% if(login.login==1){%>
+                        <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                    <%}%>
+                </ul>
+                <div class="info"><hr>경상국립대학교 얼죽아
+                    <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                </div>
+            </section>
+        </div>
+        <script src="public\js\index.js"></script>
+        <div class="main_logo"> 
+            <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+        </div>  
+    </div>
+
+    <div class="main_box">
+    <div class="question"> 
+        <h2 class="question_text">어떤 카페를 찾으시나요?</h2>
+        <span class="notice_text">찾으시는 조건을 1개 ~ 3개 선택해주세요.</span>
+
+        <form name="filtering" class="filter-group" action="/filter" method="post">
+            <div class="question_button">
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn1" name="dessert" value="dessert" onchange="togglefilter()" >
+                <label class="btn-label" for="btn1"><img src="public\static\dessert.png" id="image1"/>디저트</label> 
+              </div>
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn2" name="pet" value="pet" onchange="togglefilter()">
+                <label class="btn-label" for="btn2"><img src="public\static\pet.png" id="image1"/>애견동반</label>
+              </div>
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn3" name="nokids" value="nokids" onchange="togglefilter()">
+                <label class="btn-label" for="btn3"><img src="public\static\nokids.png" id="image1"/>노키즈존</label>
+              </div>
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn4" name="takeout" value="takeout" onchange="togglefilter()">
+                <label class="btn-label" for="btn4"><img src="public\static\takeout.png" id="image1"/>테이크아웃</label>
+              </div>
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn5" name="delivery" value="delivery" onchange="togglefilter()">
+                <label class="btn-label" for="btn5"><img src="public\static\delivery.png" id="image1"/>배달</label>
+              </div>
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn6" name="meeting" value="meeting" onchange="togglefilter()">
+                <label class="btn-label" for="btn6"><img src="public\static\meeting.png" id="image1"/>단체석(6인 이상)</label>
+              </div>
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn7" name="franchise" value="franchise" onchange="togglefilter()">
+                <label class="btn-label" for="btn7"><img src="public\static\franchise.png" id="image1"/>프랜차이즈</label>
+              </div>
+              <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn8" name="parking" value="parking" onchange="togglefilter()">
+                <label class="btn-label" for="btn8"><img src="public\static\parking.png" id="image1"/>주차장</label>
+            </div>
+            <div class="form-element"> 
+                <input type="checkbox" class="btn-check" id="btn9" name="nothing" value="nothing" onchange="togglefilter()">
+                <label class="btn-label" for="btn9">원하는 조건이 없어요.</label>
+            </div>
+                <input type="hidden" name="selectfilter1" value="">
+                <input type="hidden" name="selectfilter2" value="">
+                <input type="hidden" name="selectfilter3" value="">
+            </div>           
+    </div>   
+
+    <div class="map_areas">
+    <span class="notice_text">지도에서 구역을 최대 3개 선택해주세요.</span>
+            <div class="map_area">
+                <div id="map"></div>
+            </div>
+            <div class="area_name">
+                <input type="hidden" name="selectMap1" value="">
+                <input type="hidden" name="selectMap2" value="">
+                <input type="hidden" name="selectMap3" value="">
+            </div>
+    </div>
+    <span class="notice_text">아이스 아메리카노의 최대 가격을 선택해주세요.</span>        
+        <div class="range_box">
+            <span class="ice">아이스 아메리카노</span>
+            <input type="range" class="range" name="price" value="0" min="0" max="10000" step="1000" onmousemove="rangeSlider(this.value)" onclick="rangeSlider(this.value)">
+            <span id="rangeValue">0원</span> 
+        </div>
+
+        <input type="submit" class="next" value="카페 찾기">
+    </form>
+    </div>
+    
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9d1355c19666c5197b4f39cb9f886798"></script>
+    <script src="/public\js\kakaomap.js"></script>
+    <script src="/public\js\map_filter.js"></script>
+    <script>
+        //가격 출력
+        function rangeSlider(value){
+            document.getElementById("rangeValue").innerHTML = value;
+            rangeValue.innerHTML = value + "원";
+        }
+
+        //조건버튼 최대 3개 지정
+        var checkboxes = document.querySelectorAll('.btn-check');  // 모든 체크박스 요소 선택
+        var maxLimit = 3;  // 최대 선택 가능한 개수
+
+        // 체크박스 상태 변경 시
+        function togglefilter() {
+            var checkedCount = 0;  // 선택된 체크박스 개수
+
+            // 선택된 체크박스 개수 계산
+            for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                checkedCount++;
+            }
+            }
+
+           // 선택된 체크박스 개수가 최대 개수를 초과시 메시지 출력
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].onclick = function() {
+                    if (this.checked && checkedCount >= maxLimit) {
+                        alert('최대 3개까지 선택 가능합니다.');
+                        this.checked = false;
+                    }
+                    else if (!this.checked && checkedCount > maxLimit) {
+                        this.checked = true;
+                    } 
+                };
+            }
+
+            const selectedCheckboxes = Array.from(document.querySelectorAll('.btn-check:checked'));
+            const selectedValues = selectedCheckboxes.map((checkbox) => checkbox.value);
+
+            // 최대 3개까지 선택된 체크박스 값을 저장
+            const selectFilters = selectedValues.slice(0, 3);
+            const btn9 = document.querySelector('#btn9');
+
+            if (btn9.checked) { 
+                document.querySelector('input[name="selectfilter1"]').value = 'nothing';
+            }  
+
+            // 선택된 체크박스 값을 각 hidden 필드에 저장
+            document.querySelector('input[name="selectfilter1"]').value = selectFilters[0] || '';
+            document.querySelector('input[name="selectfilter2"]').value = selectFilters[1] || '';
+            document.querySelector('input[name="selectfilter3"]').value = selectFilters[2] || '';
+        }
+    </script>
+</body>
+</html>

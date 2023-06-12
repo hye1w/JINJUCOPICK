@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>진주커Pick</title>
+        <link rel="stylesheet"  type="text/css" href="/public/css/gifticon_upload.css">
+        <link rel="stylesheet"  type="text/css" href="/public/css/header.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/a064522756.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div class="logo_back">
+            <div class="side_menu">
+                <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                    <input type="button" value="" class="bookmark-btt">
+                </label>
+                <section class="side_section">
+                    <ul class="bookmark-lists">
+                        <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                        <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                        <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                        <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                        <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                    </ul>
+                    <div class="info"><hr>경상국립대학교 얼죽아
+                        <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                    </div>
+                </section>
+            </div>
+            <script src="public\js\index.js"></script>
+            <div class="main_logo"> 
+                <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+            </div>  
+        </div>
+
+        <div class="form_section">
+            <h2>기프티콘</h2>
+            <form action="/gifticon_upload/submit" id="myForm" method="post" enctype="multipart/form-data">
+                <input type="file" id="gifticonImg" name="gifticonImg" accept="image/*" aria-required="true">
+                <table id="inputContainer">
+                    <tr>
+                        <td colspan="2" class="td_input"><input type="text" class="form_input" id="fileName" value="" placeholder="사진을 등록하세요." disabled></td>
+                        <td class="td_items">
+                            <label for="gifticonImg"><span class="fileInput">사진 등록</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_items">카페명</td>
+                        <td colspan="2" class="td_input"><input type="text" class="form_input" id="cafeName" name="cafeName" maxlength="30" autocomplete="off" required oninvalid="this.setCustomValidity(' ')" oninput="this.setCustomValidity('')" placeholder="카페명을 입력하세요."></td>
+                    </tr>
+                    <tr>
+                        <td class="td_items">유효기간</td>
+                        <td colspan="2" class="td_input"><input type="date" class="form_input" id="expirationDate" name="expirationDate" required oninvalid="this.setCustomValidity(' ')" oninput="this.setCustomValidity('')"></td>
+                    </tr>
+                </table>
+                <input type="reset" class="form_btn" id="reset_btn" value="초기화" onclick="document.getElementById('fileName').textContent = '&nbsp;'">
+                <input type="submit" class="form_btn" id="upload_btn" value="기프티콘 등록">
+            </form>
+        </div>
+
+        <div class="list_section">
+            <form action="/gifticon_upload/delete" method="post" onsubmit="return nocheck()">
+                <% if(data.length > 0){ %>
+                    <div class="check_section">
+                        <input type="checkbox" class="ch_all" id="ch_all" name="select" value="selectAll(this)">
+                        <label for="ch_all">전체선택&ensp;|&ensp;</label>
+                    </div>
+                    <button type="submit" class="del_btn" id="del_btn">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    
+                    <div class="gifticon_lists" id="gifticon_lists">
+                        <% for(let i = 0; i<data.length;i++){%>
+                            <div class="gifticons">
+                                <% var image = data[i] %>  
+                                <p><input type="checkbox" name="check" value="<%=image.gifticon%>" onclick="checkSelectAll()"></p>
+                                <img src="<%= image.gifticon %>" width="100" height="150" onclick="openOriginal(this.src)">
+                                <div>카페명 : <%= image.name %></div>
+                                <div>유효기간 : <span class="newDate"><%=image.date%></span></div>
+                            </div>
+                        <%}%>
+                    </div>
+                <% } else { %>
+                    <div class="no_upload">등록된 기프티콘이 없습니다.</div>
+                <% } %>
+            </form>
+        </div>
+
+        <script>
+            function nocheck(){
+                const checkedBoxes = document.querySelectorAll('input[name="check"]:checked');
+                if (checkedBoxes.length == 0 ) {
+                    alert("선택된 기프티콘이 없습니다.");
+                    return false;
+                } else {
+                    return confirm('기프티콘을 삭제하시겠습니까?'); 
+                } 
+            }
+        </script>
+
+        <script>
+            function checkSelectAll()  {
+                const boxes = document.querySelectorAll('input[name="check"]').length;// 전체 체크박스
+                const checked = document.querySelectorAll('input[name="check"]:checked').length;// 선택된 체크박스
+                const selectAll  = document.querySelector('input[name="select"]');// select all 체크박스
+                
+                if(boxes == checked)  {
+                    selectAll.checked = true;
+                }else {
+                    selectAll.checked = false;
+                }
+            }
+        </script>
+
+        <script>
+            const checkAll = document.querySelector('#ch_all')
+            checkAll.addEventListener("change", ()=>{
+                const checkList = document.getElementsByName("check");
+                for (check of checkList){
+                    check.checked = checkAll.checked;
+                }
+            });
+        </script>
+
+        <script>
+            document.getElementById('gifticonImg').onchange = function(){
+                var file_path = this.value;
+                var reg = /(.*?)\.(jpg|bmp|jpeg|png)$/;
+                
+                if (file_path != "" && (file_path.match(reg) == null || reg.test(file_path) == false)) {
+                    // 허용되지 않은 확장자일 경우
+                    alert("이미지 파일만 업로드 가능합니다.");
+                }
+                else {
+                    // 만들어둔 text input에 파일명 출력
+                    var file = this.files[0];
+
+                    if (file) {
+                        document.getElementById('fileName').value = file.name;
+                        document.getElementById('fileName').oninvalid = "";
+                    } else {
+                        document.getElementById('fileName').value = "";
+                    }
+                }
+            }
+        </script>
+            
+        <script>
+            let dateElement = document.getElementById('expirationDate');
+            let date = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, -14);
+            dateElement.setAttribute("min", date);
+        </script>
+
+        <script>
+            document.getElementById("upload_btn").addEventListener("click", function(event) {
+
+            var fileInput = document.getElementById("gifticonImg");
+
+            if (fileInput.files.length > 0) {
+                // 파일이 선택된 경우
+                var fileSize = fileInput.files[0].size; // 첫 번째 파일의 크기 확인
+                if (fileSize > 0) {
+                // 업로드 파일명
+                var file = fileInput.files[0];
+                }
+            } else {
+                // 파일이 선택되지 않은 경우
+                alert("파일을 선택하세요.");
+                event.preventDefault(); //form 제출 막기
+                return;
+                
+            }
+
+            var cafeName = document.getElementById("cafeName").value;
+            var expirationDate = document.getElementById("expirationDate").value;
+
+            if (!cafeName) {
+                alert("카페명을 입력해주세요.");
+                return;
+            }
+            
+            if (!expirationDate) {
+                alert("유효기간을 선택해주세요.");
+                return;
+            }
+            });
+        </script>
+
+        <script> //원본보기 중앙배치
+            function openOriginal (url) {
+                var width = 800;
+                var height = 600;
+                var top = (window.screen.height - 700) / 2;
+                var left = (window.screen.width - 800) / 2;
+            
+                window.open(url, '_blank', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
+            }
+        </script>
+
+    </body>
+</html>

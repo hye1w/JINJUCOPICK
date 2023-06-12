@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>진주커Pick</title>
+
+    <link rel="stylesheet"  type="text/css" href="/public\css\communityRead.css" />
+    <link rel="stylesheet"  type="text/css" href="/public\css\header.css" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <div class="logo_back">
+        <div class="side_menu">
+            <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                <input type="button" value="" class="bookmark-btt" style="background-color: pink";>
+            </label>
+            <section class="side_section">
+                <ul class="bookmark-lists">
+                    <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                    <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                    <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                    <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                    <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                </ul>
+                <div class="info"><hr>경상국립대학교 얼죽아
+                    <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                </div>
+            </section>
+        </div>
+        <script src="/public\js\index.js"></script>
+        <div class="main_logo"> 
+            <a href="/"><img src="/public/static/jinju.textlogo.png" height= "110" alt="로고"></a>
+        </div> 
+    </div>
+
+    <% var list = data[0] %>
+    <div class="container">
+        <div class="write_box">
+            <div class="title_box">
+                <span class="title_data">
+                    <%= list.title %>
+                </span>
+            </div>
+
+            <div class="detail_box">
+                <span class="detail1">
+                    <span class="people_box">인원</span>
+                    <span class="people_data"><%= list.people %></span>
+                </span>
+                <span class="detail2">
+                    <span class="purpose_box">목적</span>
+                    <span class="purpose_data">
+                        <% if(list.purpose === 'study') { %>
+                            스터디
+                        <% } else if (list.purpose === 'friendship') { %>
+                            친목
+                        <% } else if (list.purpose === 'else'){ %>
+                            기타
+                        <% } %>
+                    </span>
+                </span>
+                <span class="detail3">
+                    <span class="date_box">만남 날짜</span>
+                    <span class="date_data">
+                        <%= list.date %>
+                    </span>
+                </span>
+                <span class="detail4"> 
+                    <span class="nickname_data"><%= list.nickname %></span>
+                    <span class="writedate"><%=  list.writeTime.substring(0, 10)%></span>
+                </span>
+            </div>
+            <hr id="detail_hr">
+            <div class="content_box">
+                <div class="content_data" style="white-space:pre-line;"><%= list.content %></div>
+            </div>
+
+            <span class="bt_group">               
+                <% var edit = data1.edit %>
+                <%if(edit == '1'){%>
+                    <span><a href="/community/<%= list.nickname %>/<%= list.writeTime %>/<%= list.num %>/modify"><button class="change_bt">수정</button></a></span>
+                <%}%>
+                <% var edit = data1.edit %>
+                <%if(edit == '1'){%>
+                    <form name="community_mpdify" action = "/community/<%= list.nickname %>/<%= list.writeTime %>/<%= list.num %>/delete" method="post" onsubmit="return confirm('글을 삭제하시겠습니까?');">
+                        <span><a href="/community"><button class="del_bt" onclick="deleteData()">삭제</button></a></span>
+                    </form>
+                <%}%>              
+                <span><a href="/community"><button class="list_bt">목록</button></a></span>
+            </span>
+        </div>
+
+        <hr id="center_hr">
+        
+        <div class="under_box">
+            <div class="comment_title">WITH&ensp;JINJUCOPICK</div>
+            <% for(let i = 0; i < comm.length; i++) { %>
+              <% var comment = comm[i] %>
+              <div class="comment_box">
+                <table class="comment_list">
+                  <tr class="conment_list">
+                    <td>
+                      <span class="comment_nickname"><%= comment.nickname %></span>
+                      <span class="comment_date"><%= comment.writeTime.substring(0, 10) %></span>
+                      <div class="comment_data"><%= comment.commentdata %></div>
+
+                      <form name="comment_delete" action = "/community/<%= comment.num %>/<%= comment.no %>" method="post" onsubmit="return confirm('댓글을 삭제하시겠습니까?');">
+                        <% if (comment.nickname === nickname.nick) { %>
+                            <span><button class="comment_delete_bt">삭제</button></span>
+                        <% } %>    
+                      </form>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            <% } %>
+
+            <div id="no_list" <% if (comm.length > 0) { %>style="display:none"<% } %>>작성된 댓글이 없습니다.</div>
+
+            <form name="plus_comment" class="com_plus" action = "/community/<%= list.nickname %>/<%= list.writeTime %>/<%= list.num %>" method="post" autocomplete=off>
+                <input type="text" class="comment_plus" id="comment" name="commentdata" required oninvalid="this.setCustomValidity(' ')" maxlength="100"></textarea>
+                <input type="submit" class="plus_bt" value="등록" id="plus_bt">
+            </form>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
