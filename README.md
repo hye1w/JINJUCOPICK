@@ -114,7 +114,7 @@
 
 
 ## 📁 카페 데이터
-[cafe.csv](https://github.com/hye1w/JINJUCOPICK/files/11724534/cafe.csv)
+- [진주 카페 데이터](https://github.com/hye1w/JINJUCOPICK/files/11724534/cafe.csv)
 
 ## 💡 추후 개선 사항
 - 직접 방문한 사용자에 한해서만 리뷰 작성 제한
