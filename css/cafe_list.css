@@ -1,0 +1,118 @@
+body::-webkit-scrollbar{display:none}
+
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+#list_container {
+    display: flex;
+    justify-content: center;
+}
+
+#map {
+    width:600px; height:600px;
+    float: left;
+    margin: 30px;
+    
+}
+ 
+#list_box {
+    width:600px; height:600px;
+    background-color: rgba(225,231,235, 0.7);
+    float: left;
+    margin: 30px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+ 
+.cafe_list {
+    width:550px; height:70px;
+    background-color: rgb(192, 203, 215, 0.6);
+    margin: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.info_box {
+    padding: 10px; 
+}
+
+.cafeName {
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 5px; 
+}
+
+.cafeAddress {
+    font-size: 14px;
+    margin-left: 5px; 
+    margin-top: 5px;
+}
+
+.filtering{
+    font-size: 12px; 
+}
+ 
+.filter {
+    display: inline-block;
+    background-color: rgb(167, 186, 223);
+    border-radius: 20px;
+    margin: 5px 3px 0px 5px;
+    padding: 3px 10px;
+    color: white; 
+}
+
+.cafe_area {
+    font-size: 19px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-top: 15px;
+    margin: 0px 5px 10px 5px; 
+}
+
+.view {
+    width: 110px;
+}
+ 
+.viewLocation {
+    width: 100px; height: 50px;
+    background-color: rgb(160, 175, 209);
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.viewLocation:hover {
+    background-color: rgb(143, 146, 147);
+}
+
+.cafe_title { 
+    width: 220px; height: 40px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px 10px 5px 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold; 
+}
+
+.cafeAverage {    
+    font-size: 18px;
+    margin-left: 15px;
+    color: orange;
+    margin-right: -2px;   
+}
+
+.cafeAverageNumber {
+    color: black;
+    font-size: 16px; 
+}
+
+.slice {
+    color: rgb(108, 108, 108);
+    font-size: 16px; 
+} 

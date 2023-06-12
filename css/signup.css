@@ -1,0 +1,99 @@
+body::-webkit-scrollbar{display:none}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Noto Sans KR', sans-serif; 
+}
+
+.input {
+    border: 1px solid rgb(135, 141, 146);
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    line-height: 35px;
+    padding: 0px 20px;
+}
+
+.input::placeholder {
+    font-size: 13px;  
+    color: rgba(75, 75, 75, 0.6);
+    font-weight: 500;
+}
+
+.container {
+    width: 50%;
+    padding: 80px 10px 30px 10px;
+    /* border: 2px solid rgba(156, 164, 170, 0.42); */
+    background-color: rgb(235, 237, 240, 0.4);
+    text-align: center;
+    align-items : center;
+    display: table;
+    margin: auto;
+    margin-top: 35px;  
+    border-radius: 10px; 
+}
+
+.title {
+    text-align: center; 
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(0, 0, 0, 0.7);
+    margin-top: -65px; 
+    margin-bottom: 50px;
+}
+
+.container > div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.input_title {
+    font-size: 16px;
+    color: #373f57; 
+    font-weight: bold; 
+    width: 60%; 
+    text-align: left;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.email input, .password1 input, .password2 input, .nickname input {
+    width: 60%; 
+    height: 46px;
+    display: block;
+    margin: auto;
+    margin-bottom: 5x;
+    font-size: 13px; 
+    font-weight: 600;
+} 
+
+.email{
+    margin-top: -40px;
+}
+
+#signup { 
+    width: 60%;
+    cursor: pointer;
+    background-color: rgba(156, 164, 170, 0.42);
+    border: none;
+    border-radius: 1px;
+    margin-top: 10px; 
+    height: 60px;
+    font-size: 22px;
+    font-weight: 600; 
+    padding-bottom: -50px;
+}
+
+.error {
+    width: 60%; 
+    font-size: 12px;
+    font-weight: 700;
+    color:red;
+    padding-left: 3px;
+    padding-top: 1px;
+    margin:auto;
+    margin-top: 3px; 
+    text-align: left;
+}

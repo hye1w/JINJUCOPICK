@@ -1,0 +1,238 @@
+@font-face{
+    font-family:"NanumBarunpen";
+    src:url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff") format("woff");
+    font-weight:normal;font-style:normal
+}
+
+* {
+    box-sizing: border-box;
+    margin:0px;padding:0px;border:0px;vertical-align:baseline;
+}
+
+body::-webkit-scrollbar{display:none}
+
+#info_section {
+    background-color: #EAECEF;
+    display: flex;
+    transition: all ease-out 0.3s;
+    margin : auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 85%;
+}
+
+#simple_info {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 10px 10px;
+    width: 45%;
+}
+
+#img_wrapper {
+    height: 250px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#cafe_image {
+    height: 100%; 
+}
+
+.star-ratings {
+    position: relative;
+}
+   
+#star-ratings-fill {
+    color: gold;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#star-ratings-base {
+    color: #fff;
+    z-index: 0;
+    padding: 0;
+}
+
+.info_items {
+    display: inline-block;
+    width:20px;
+    text-align: center;
+}
+
+#review {
+    background-color: #fff;
+    display: inline;
+    align-items: end;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 55%;
+}
+
+
+#review_input {
+    border: 2px solid lightgray;
+    padding: 8px;
+}
+
+.star {
+    position: relative;
+    font-size: 1.5rem;
+    color: #ddd;
+}
+  
+.star input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.star span {
+    width: 0;
+    position: absolute; 
+    left: 0;
+    color: gold;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#text_area {
+    width: 100%;
+    background: #f5f5f5;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 20px;
+
+}
+
+#review_submit {
+    background-color: inherit;
+    float: right;
+    color: lightgray;
+    font-weight: bold; 
+    padding: 10px;
+    width: 60px;
+    font-size: 13px;  
+    background-color: rgb(211, 211, 211, 0.4);
+    color: black;
+    border: none;
+    border-radius: 10px;   
+}
+
+#review_submit:hover { 
+    background-color: rgb(197, 197, 197);
+    color: black;
+    border: none; 
+}
+
+.text_button {
+    background: #fff;
+    color: #7BA2EE;
+    border: 1px solid #7BA2EE;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.text_button:hover {
+    background-color: #7BA2EE;
+    color: #fff;
+}
+
+#review_lists {
+    list-style: none;
+    border-top: 2px solid #EAECEF;
+    border-bottom: 2px solid #EAECEF;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 85%;
+}
+
+.reviews {
+    border-top: 0.5px solid #EAECEF;
+    border-bottom: 0.5px solid #EAECEF;
+    padding: 5px;
+}
+
+.user-star-ratings {
+    position:relative; 
+    display: inline-block;
+}
+
+.user-star-ratings-fill {
+    position: absolute;
+    top:0;
+    left: 0;
+    color:gold;
+    z-index: 1; 
+    margin:0; 
+    overflow:hidden;
+}
+
+.user-star-ratings-base {
+    z-index: 0;
+    padding: 0;
+    color: lightgray;
+}
+
+#review_del_btn {
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.back {  
+    float: right; 
+    cursor: pointer;
+    padding: 10px;
+    width: 60px;
+    font-size: 13px;  
+    font-weight: 600;
+    margin-top: 15px; 
+    margin-left: 10px; 
+    margin-right: 8px;
+    background-color: rgba(184, 206, 251);
+    color: black;
+    border: none;
+    border-radius: 10px;   
+}
+
+.back:hover {  
+    background-color: rgb(104, 152, 247);
+    color: black;
+    border: none;
+    border-radius: 10px; 
+}
+
+@media screen and (max-width: 768px) {
+    #info_section {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        opacity: 1;
+        transition: all ease-out 0.3s;
+    }
+
+    #simple_info {
+        width: 100%;
+    }
+
+    #review {
+        width: 100%;
+    }
+
+    #img_wrapper {
+        height: 300px;
+    }
+}
