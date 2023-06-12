@@ -57,60 +57,60 @@
 ### · 메인 페이지
 - 필터링 조건 선택
 
-![메인페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/a3ae3301-50e4-493e-bcd8-710ccc48c1ff.gif)
+![메인페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/8b3cc676-e3a9-4d68-8a90-d664d5169ae3.gif)
 
 ### · 카페 정보 리스트 페이지
 - 위치 보기
 
-![위치 보기](https://github.com/hye1w/JINJUCOPICK/assets/105777703/036aa8db-a3e3-4381-b497-b759e391f4e5.gif)
+![위치 보기](https://github.com/hye1w/JINJUCOPICK/assets/105777703/1d5bd49a-d25b-48aa-ad56-0fbfef40a4e0.gif)
 
 - 상세 정보 페이지 이동
 
-![상세 정보 페이지 이동](https://github.com/hye1w/JINJUCOPICK/assets/105777703/c1bb4d46-a999-4da5-82b0-c7ed8ce27c77.gif)
+![상세 정보 페이지 이동](https://github.com/hye1w/JINJUCOPICK/assets/105777703/c6522b0e-5765-4256-ba39-290c418ffc20.gif)
 
 ### · 상세 정보 페이지
 
-![상세 정보 페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/3348ba19-a4d4-4647-8e6c-6046e1f9cd16.gif)
+![상세 정보 페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/1868d0c2-3133-4d01-8c9a-0664a9930bb8.gif)
 
 ### · 기프티콘
 - 기프티콘 업로드
 
-![기프티콘](https://github.com/hye1w/JINJUCOPICK/assets/105777703/bb4102ae-da43-4884-9cfe-e722bb8fd16c.gif)
+![기프티콘](https://github.com/hye1w/JINJUCOPICK/assets/105777703/baca414e-f4ea-4894-92b6-ac606d34ecf0.gif)
 
 - 기프티콘 유효기간 알림
 
-![기프티콘 유효기간 알림](https://github.com/hye1w/JINJUCOPICK/assets/105777703/fa7dc12d-2579-4591-b3b2-2aaa443c887f.gif)
+![기프티콘 유효기간 알림](https://github.com/hye1w/JINJUCOPICK/assets/105777703/27d30345-13d5-460b-ac1d-37ed5421b856.gif)
 
 ### · 커뮤니티
 - 게시글 작성
 
-![커뮤니티 글쓰기](https://github.com/hye1w/JINJUCOPICK/assets/105777703/50014b87-109a-4d7a-9e11-bc81b9723883.gif)
+![커뮤니티 글쓰기](https://github.com/hye1w/JINJUCOPICK/assets/105777703/4233ee5f-e77f-4cfe-a512-0f69bc2b25bf.gif)
 
 - 커뮤니티 댓글 작성
 
-![커뮤니티 댓글](https://github.com/hye1w/JINJUCOPICK/assets/105777703/0b526092-9a71-4268-8fa4-7a8773f6e058.gif)
+![커뮤니티 댓글](https://github.com/hye1w/JINJUCOPICK/assets/105777703/f8fa9b97-92a1-494b-b720-2b605a7e1064.gif)
 
 - 게시글 수정
 
-![커뮤니티 페이징,수정](https://github.com/hye1w/JINJUCOPICK/assets/105777703/62549fa5-fd88-46e9-8cc2-d11ed2115d0b.gif)
+![커뮤니티 페이징,수정](https://github.com/hye1w/JINJUCOPICK/assets/105777703/7afc6b47-59b8-461c-9a55-d331db6e10fe.gif)
 
 - 게시글 삭제
 
-![커뮤니티 글 삭제](https://github.com/hye1w/JINJUCOPICK/assets/105777703/e117a995-1f5f-4f7a-811d-5e7420ea3fa4.gif)
+![커뮤니티 글 삭제](https://github.com/hye1w/JINJUCOPICK/assets/105777703/170b7483-8ae4-4989-afba-6c3856683992.gif)
 
 ### · 마이페이지 
 - 닉네임 변경
 
-![닉네임 변경](https://github.com/hye1w/JINJUCOPICK/assets/105777703/14192a99-5b58-4673-b3e0-c49ff4009963.gif)
+![닉네임 변경](https://github.com/hye1w/JINJUCOPICK/assets/105777703/6b8645e8-7047-4bce-a932-dc85dad8152b.gif)
 
 - 비밀번호 변경
 
-![비밀번호 변경](https://github.com/hye1w/JINJUCOPICK/assets/105777703/f5e1c050-15bb-41ce-9fed-154d057b3136.gif)
+![비밀번호 변경](https://github.com/hye1w/JINJUCOPICK/assets/105777703/45929545-bfff-4872-ac9a-ffbbf502b0ed.gif)
 
 ### · 회원가입
 - 회원가입
 
-![회원가입](https://github.com/hye1w/JINJUCOPICK/assets/105777703/eb882405-6094-4c78-829f-8cc3661d9425.gif)
+![회원가입](https://github.com/hye1w/JINJUCOPICK/assets/105777703/5262039d-285b-497a-a41f-2b9a16511f2a.gif)
 
 
 ## 💡 추후 개선 사항
