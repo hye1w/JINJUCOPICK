@@ -1,7 +1,7 @@
 # ☕ 진주커Pick
 >#### 사용자 맞춤 카페 추천 웹사이트
 
-<img src="https://github.com/hye1w/JINJUCOPICK/assets/105777703/3b680f78-41ed-491c-9fbb-4071773ddaed" width="700"> 
+<img src="https://github.com/hye1w/JINJUCOPICK/assets/105777703/26e558b8-d8e1-4574-95d1-35c205290593" width="700"> 
 
 ## 💁‍♀️ 팀원 소개
 >#### 종합설계PBL_ 얼죽아 
