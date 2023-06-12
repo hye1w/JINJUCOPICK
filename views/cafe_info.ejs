@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>진주커Pick</title>
+        <link rel="stylesheet"  type="text/css" href="/public/css/header.css">
+        <link rel="stylesheet"  type="text/css" href="/public/css/cafe_info.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        
+        <script src="https://kit.fontawesome.com/a064522756.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="logo_back">
+            <div class="side_menu">
+                <label> <span class="material-symbols-outlined" id="menu">menu</span>
+                    <input type="button" value="" class="bookmark-btt" style="background-color: pink";>
+                </label>
+                <section class="side_section">
+                    <ul class="bookmark-lists">
+                        <li class="bookmark" id="main_home"><a href="/"><div id="main_name">진주커Pick</div></a></li><hr>
+                        <% var login = data1%>
+                        <% if(login.login==1){%>
+                            <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/mypage">마이페이지</span></a></li>
+                        <%} else {%>
+                            <li class="material-symbols-outlined" id="login">account_circle<span id="name"><a href="/login">로그인</span></a></li>
+                        <%}%>
+                        <li class="material-symbols-outlined" id="gifticon">barcode<span id="name"><a href="/gifticon_upload">기프티콘</span></a></li>
+                        <li class="material-symbols-outlined" id="commu">chat<span id="name"><a href="/community">커뮤니티</span></a></li>
+                        <% if(login.login==1){%>
+                            <li class="material-symbols-outlined" id="out">logout<span id="name"><a href="/logout">로그아웃</span></a></li> 
+                        <%}%>
+                    </ul>
+                    <div class="info"><hr>경상국립대학교 얼죽아
+                        <div id="info_1">수학과&emsp;&emsp;&emsp;&emsp;강수연<br>정보통계학과&emsp;정인영<br>정보통계학과&emsp;정혜주<br>컴퓨터과학과&emsp;서혜원<br>컴퓨터과학과&emsp;이도현<hr></div>
+                    </div>
+                </section>
+            </div>
+            <script src="/public/js/index.js"></script>
+            <div class="main_logo" style="text-align: center;"> 
+                <a href="/"><img src="/public/static\jinju.textlogo.png" height= "110" alt="로고"></a>
+            </div>
+        </div>
+
+        <% var info = data[0] %>
+        <div id="info_section">
+            <div id="simple_info">
+                <div id="img_wrapper">
+                    <img id="cafe_image" src="<%=info.image%>">
+                </div>
+                <div><span class="info_items"><i class="fas fa-coffee"></i></span> <%=info.cafename%></div>
+                <div><span class="info_items"><i class="fa fa-map-marker" aria-hidden="true"></i></span> <%=info.location%></div>
+                <div class="info_tags">
+                    <% if(info.dessert != 0 || info.pet != 0 || info.nokids != 0 || info.takeout != 0 || info.delivery != 0 || info.meeting != 0 || info.franchise != 0 || info.parking != 0){%><!--카페 정보 DB에서 값 가져와서 키워드 출력-->
+                        <span class="info_items"><i class="fas fa-tags"></i></span>
+                    <%}%>
+                    <% if(info.dessert == 1){%><!--카페 정보 DB에서 값 가져와서 키워드 출력-->
+                        #디저트
+                    <%}%>
+                    <% if(info.pet == 1){%>
+                        #애견동반
+                    <%}%>
+                    <% if(info.nokids == 1){%>
+                        #노키즈존
+                    <%}%>
+                    <% if(info.takeout == 1){%>
+                        #테이크아웃
+                    <%}%>
+                    <% if(info.delivery == 1){%>
+                        #배달
+                    <%}%>
+                    <% if(info.meeting == 1){%>
+                        #단체석(6인이상)
+                    <%}%>
+                    <% if(info.franchise == 1){%>
+                        #프랜차이즈
+                    <%}%>
+                    <% if(info.parking == 1){%>
+                        #주차장
+                    <%}%>
+                </div>
+                    
+                <div class="star-ratings"> 
+                    <script>
+                        var average = [];
+                        average.push({
+                            starwidth: "<%= (info.score !== 0 ? (info.score/info.count).toFixed(1) : 0) %>"
+                        });
+                        console.log(average);
+
+                        var fillwidth = (average[0].starwidth / 5) * 80;
+                        console.log(fillwidth);
+                    </script>
+
+                        <div id="star-ratings-fill">
+                            <span>★★★★★</span> 
+                        </div> 
+
+                    <script>
+                        var starRatingsFill = document.getElementById("star-ratings-fill");
+                        starRatingsFill.style.width = fillwidth + "px";
+                    </script>           
+                    <div id="star-ratings-base">
+                        <span>★★★★★</span>
+                        <span style="color: black">
+                            <%if(!info.score){%>
+                                (0)
+                            <%} else {%>
+                                (<%= (info.score/info.count).toFixed(1) %>)
+                            <%}%>
+                        </span>
+                    </div>
+                </div>
+                <br>
+                
+                <% if(info.time!=''){%>
+                    <div><span class="info_items"><i class="fa-solid fa-clock"></i></span> 영업시간:&nbsp;<%=info.time%></div>
+                <%}%>
+                <% if(info.dayoff!=''){%>
+                    <div><span class="info_items"><i class="fa fa-calendar" aria-hidden="true"></i></span> 휴무일:&nbsp;<%=info.dayoff%></div>
+                <%}%>
+                <!--<div><span class="info_items"><i class="fa-solid fa-dollar-sign"></i></span>
+                    <% if(info.price==10000){%>
+                        가격 미제공
+                    <%} else {%>
+                        가격:&nbsp;<%=info.price%>
+                    <%}%>-->
+                <% if(info.price < 10000){%>
+                    <div><span class="info_items"><i class="fa-solid fa-dollar-sign"></i></span> 가격:&nbsp;<%=info.price%>원</div>
+                <%}%>
+                <div><span class="info_items"><i class="fas fa-parking"></i></span> 주차장 여부:
+                    <% if(info.parking==1){%> <!--주차가능 여부 출력-->
+                        주차 가능
+                    <%}else{%>
+                        주차 불가능
+                    <%}%>
+                </div>
+            </div>
+            <div id="review">
+                <p><i class="fa fa-plus-circle" aria-hidden="true"></i> 매장에 대한 후기를 남겨주세요.</p>
+                <div id="review_input">
+                    <form onsubmit="return comment_write()" method="post" action="/cafe_info/<%= info.cafename %>" >
+                    <span class="star">
+                        ★★★★★
+                        <span>★★★★★</span>
+                        <input type="range" id = "score" name ="score" oninput="drawStar(this)" value="10" step="1" min="0" max="10">
+                    </span>
+                        <textarea id="text_area" rows="4" name ="review" maxlength="100" placeholder="매장에 대한 후기를 남겨주세요."></textarea>
+                        <input type="submit" id="review_submit" value="등록" >
+                        <input type="button" class="text_button" value="콘센트가 있어요" onclick="text_load(this)">
+                        <input type="button" class="text_button" value="시그니처 메뉴가 있어요" onclick="text_load(this)">
+                        <input type="button" class="text_button" value="디저트가 맛있어요" onclick="text_load(this)">
+                        <input type="button" class="text_button" value="매장이 넓어요" onclick="text_load(this)">
+                        <input type="button" class="text_button" value="사진 찍기 좋아요" onclick="text_load(this)">
+                        <input type="button" class="text_button" value="가성비가 좋아요" onclick="text_load(this)">
+                        <input type="button" class="text_button" value="화장실이 깨끗해요" onclick="text_load(this)">
+                    </form> 
+                </div>
+                <a href="/cafe"><button class="back">목록</button><a>
+            </div> 
+        </div>
+        
+
+        <% if (data2.length != 0) {%>
+            <ul id="review_lists">
+                <% var check = data3[0] %> <!--리뷰(닉네임, 글, 작성 시간)-->
+                    <% for(var i = 0; i<data2.length; i++){%>
+                        <li class="reviews">
+                            <% var rev = data2[i] %>
+                            <i class="fas fa-comment" style="color: #B8CEFB;"></i>
+                            <%=rev.nickname%>
+                            <% var starId = "star-ratings-fill2-" + i; %>
+                            <span class="user-star-ratings">
+                                <span class="user-star-ratings-fill" id="<%= starId %>">★★★★★</span> 
+                                <span class="user-star-ratings-base">★★★★★</span>
+                            </span>
+            
+                            <script>
+                                var star = [];
+                                star.push({
+                                    starwidth: "<%= rev.score %>"
+                                }); 
+                                var perstar = (star[0].starwidth / 5) * 80;
+                                console.log(perstar);
+                    
+                                var starRatingsFill = document.getElementById("<%= starId %>");
+                                starRatingsFill.style.width = perstar + "px";
+                            </script>
+                            
+                            <span style="font-size: 13px;">
+                                <%= rev.writeTime.substring(0, 10)%>
+                                <form style="display:inline" name="review_delete" action = "/review/<%=info.cafename%>/<%=rev.num%>" method="post" onsubmit="return confirm('리뷰를 삭제하시겠습니까?');">
+                                    <% if(login.login==1){%>
+                                        <% if (rev.nickname == check.nickname) { %>
+                                        <button style="float:right" type="submit" id="review_del_btn">삭제</button>
+                                        <% } %> 
+                                    <%}%>   
+                                </form>
+                            </span>
+                            <div><%=rev.review%></div>
+                        </li>
+                    <%}%>
+            </ul>
+        <%}%>
+
+        <script>
+            document.querySelector('.star span').style.width = '100%';
+            const drawStar = (target) => {
+                document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+            }
+        </script>
+
+        <script>
+            function text_load(btn) {
+                const text = btn.value;
+                document.getElementById("text_area").value += text + " ";
+            }
+
+            function comment_write() {
+                // textarea에서 값을 가져옴
+                var text = document.getElementById("text_area").value;
+                          
+                if (text == "") {
+                    alert('내용을 입력하세요!');
+                    return false;
+                }
+
+                if (text.length>100) {
+                    alert('100자 내로 입력해 주세요!');
+                    return false;
+                }
+
+                else{
+                    return true;
+                }
+            }
+        </script>
+    </body>
+</html>
