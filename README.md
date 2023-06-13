@@ -21,7 +21,7 @@
     - 카테고리 조건, 구역, 가격 검색 조건 선택
     - 사용자 조건별 필터링
 
-- 카페 정보 리스트 페이지
+- 필터링 결과 페이지
     - 필터링 된 카페 정보 리스트 및 지도 마커 표시
     - 구역별 분류
     - 카테고리 조건 일치 > 평균 별점 순서 정렬
@@ -59,7 +59,7 @@
 
 ![메인페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/8b3cc676-e3a9-4d68-8a90-d664d5169ae3.gif)
 
-### · 카페 정보 리스트 페이지
+### · 필터링 결과 페이지
 - 위치 보기
 
 ![위치 보기](https://github.com/hye1w/JINJUCOPICK/assets/105777703/1d5bd49a-d25b-48aa-ad56-0fbfef40a4e0.gif)
@@ -68,7 +68,7 @@
 
 ![상세 정보 페이지 이동](https://github.com/hye1w/JINJUCOPICK/assets/105777703/c6522b0e-5765-4256-ba39-290c418ffc20.gif)
 
-### · 상세 정보 페이지
+### · 카페 상세 정보 페이지
 
 ![상세 정보 페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/1868d0c2-3133-4d01-8c9a-0664a9930bb8.gif)
 
