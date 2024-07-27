@@ -1,16 +1,6 @@
 # ☕ 진주커Pick
 >#### 사용자 맞춤 카페 추천 웹사이트
-
-<img src="https://github.com/hye1w/JINJUCOPICK/assets/105777703/26e558b8-d8e1-4574-95d1-35c205290593" width="700"> 
-
-## 💁‍♀️ 팀원 소개
->#### 종합설계PBL_ 얼죽아 
-
-- 강수연 (팀장) 수학과 2019010718
-- 정인영 (팀원) 정보통계학과 2019010862
-- 정혜주 (팀원) 정보통계학과 2019010863
-- 서혜원 (팀원) 컴퓨터과학과 2022080065  
-- 이도현 (팀원) 컴퓨터과학과 2022090003  
+>#### 5인 개발
 
 ## 🗓 프로젝트 진행 기간
 2023.03.03 - 2023.06.16
@@ -52,66 +42,35 @@
     - 유효성 검사, 중복 검사 
 
 ## 📽️ 개발 결과 영상
->#### 전체 화면으로 확인 시 화질 개선됩니다.
 
 ### · 메인 페이지
-- 필터링 조건 선택
 
-![메인페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/8b3cc676-e3a9-4d68-8a90-d664d5169ae3.gif)
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710359-5950080a-8e06-4c51-b995-f9686b0936c1.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjkyNjAsIm5iZiI6MTcyMjA2ODk2MCwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzU5LTU5NTAwODBhLThlMDYtNGM1MS1iOTk1LWY5Njg2YjA5MzZjMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODI5MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04NDgxNTM5MTMyODY2NTE2NTE0MDkyYjkwMDQ1Njc4NmM1MjhhNmUyYjlhZTJmN2EzOTllYjc1OTYwZmIzMWQzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.S1xkeQm19i21pQ2OnQt_2a_WGmVC05GWXILSPuFJVi8" width="500px"></img>
 
 ### · 필터링 결과 페이지
-- 위치 보기
 
-![위치 보기](https://github.com/hye1w/JINJUCOPICK/assets/105777703/1d5bd49a-d25b-48aa-ad56-0fbfef40a4e0.gif)
-
-- 상세 정보 페이지 이동
-
-![상세 정보 페이지 이동](https://github.com/hye1w/JINJUCOPICK/assets/105777703/c6522b0e-5765-4256-ba39-290c418ffc20.gif)
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710353-a597f3d3-7d06-4786-b3ce-2727a9d4ff22.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjkyNjAsIm5iZiI6MTcyMjA2ODk2MCwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzUzLWE1OTdmM2QzLTdkMDYtNDc4Ni1iM2NlLTI3MjdhOWQ0ZmYyMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODI5MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMTIwNDIzYjg3ODQzMWYzNjc1NWMyYTEzMWZjMjliODI4Zjc5MzRiZjYyMjJkMDk1ZGFlMmNlY2E3NTc0OGVhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.oM3ABr3-DlSW6MuUnOo6ZIL5aljITQRS5IpsyickNeo" width="500px"></img>
 
 ### · 카페 상세 정보 페이지
 
-![상세 정보 페이지](https://github.com/hye1w/JINJUCOPICK/assets/105777703/1868d0c2-3133-4d01-8c9a-0664a9930bb8.gif)
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710585-711a1e4c-d8b7-47fd-90b5-d5210b96d84a.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjk1NjQsIm5iZiI6MTcyMjA2OTI2NCwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwNTg1LTcxMWExZTRjLWQ4YjctNDdmZC05MGI1LWQ1MjEwYjk2ZDg0YS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODM0MjRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02OWE4MGVjNTExMzEzZGU3Nzg0YTdiYjcyYmY5MDdkYzk4YWJmYjJkOWExOTY4ZDcyNjRiNGNiZDhkOWEwMTBkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.CD4RMBpmSw56MNGS1wsbjn1rMT2P81tAnOfjMVnhOg0" width="500px"></img>
 
 ### · 기프티콘
-- 기프티콘 업로드
 
-![기프티콘](https://github.com/hye1w/JINJUCOPICK/assets/105777703/baca414e-f4ea-4894-92b6-ac606d34ecf0.gif)
-
-- 기프티콘 유효기간 알림
-
-![기프티콘 유효기간 알림](https://github.com/hye1w/JINJUCOPICK/assets/105777703/27d30345-13d5-460b-ac1d-37ed5421b856.gif)
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710363-b124d40d-7b0e-47dc-a45f-a9ae2dd2d26a.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjk2MTEsIm5iZiI6MTcyMjA2OTMxMSwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzYzLWIxMjRkNDBkLTdiMGUtNDdkYy1hNDVmLWE5YWUyZGQyZDI2YS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODM1MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05OGMzMWFhNjM0OTZjY2QxNGMwYmY5YTg4YTMyM2ZlNWZkYjQ3NzMyOTVjZDEwNzM3NWZiNjg2NWFjYmEzODhjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.3FCAXLAcah3zveQ__mA7eVsS4k-xt_Rpc_8iYD6A8C0" width="500px"></img>
 
 ### · 커뮤니티
-- 게시글 작성
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710366-4a9a13d6-aa28-482b-b04d-d4bdecbf6026.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjk2MTEsIm5iZiI6MTcyMjA2OTMxMSwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzY2LTRhOWExM2Q2LWFhMjgtNDgyYi1iMDRkLWQ0YmRlY2JmNjAyNi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODM1MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZWMxOGFiZTVjMWVjMWU5ZTczMWQyN2U4MzdlYmQ2MjFkZmQ4YTVmMWE0YTc2Nzg2NDNjY2FhNjc4NjE3NzU2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.W8xFn7JevMCZytT8tJ1fFdrufrmfdkzPwIE8KB9Nw_c" width="500px"></img>
 
-![커뮤니티 글쓰기](https://github.com/hye1w/JINJUCOPICK/assets/105777703/4233ee5f-e77f-4cfe-a512-0f69bc2b25bf.gif)
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710356-da27479e-3401-463c-a9d1-afc012e81667.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjk2MTEsIm5iZiI6MTcyMjA2OTMxMSwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzU2LWRhMjc0NzllLTM0MDEtNDYzYy1hOWQxLWFmYzAxMmU4MTY2Ny5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODM1MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yZWEwN2QzNWE5MzQyMjY2ZjUxZTcyYTBjNjdjMDliNjY0MTQyNTI3NjAzNzM0OWU4Yzk0ODg4NDYxOGI0NjIyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.5U-gMe79lWOkf3OaSDFAr0cxHgzw-tc_GdqfkdY3TvM" width="500px"></img>
 
-- 커뮤니티 댓글 작성
-
-![커뮤니티 댓글](https://github.com/hye1w/JINJUCOPICK/assets/105777703/f8fa9b97-92a1-494b-b720-2b605a7e1064.gif)
-
-- 게시글 수정
-
-![커뮤니티 페이징,수정](https://github.com/hye1w/JINJUCOPICK/assets/105777703/7afc6b47-59b8-461c-9a55-d331db6e10fe.gif)
-
-- 게시글 삭제
-
-![커뮤니티 글 삭제](https://github.com/hye1w/JINJUCOPICK/assets/105777703/170b7483-8ae4-4989-afba-6c3856683992.gif)
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710361-2f1ebd72-5400-4d29-a7a8-b3e288248392.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjk2MTEsIm5iZiI6MTcyMjA2OTMxMSwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzYxLTJmMWViZDcyLTU0MDAtNGQyOS1hN2E4LWIzZTI4ODI0ODM5Mi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODM1MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jNjYwN2NhN2FlMTNkNmQxMzY5OGE5YTZiZGZjOGNiZGI2NTVlYjZmNDFkYjk3NTIxMmMxZGJiMThjYTdkMGYyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.oTaSXLRom7ntbutPrdFUHBmonBBqNmYGfxB9XvCPuxk" width="500px"></img>
 
 ### · 마이페이지 
-- 닉네임 변경
-
-![닉네임 변경](https://github.com/hye1w/JINJUCOPICK/assets/105777703/6b8645e8-7047-4bce-a932-dc85dad8152b.gif)
-
-- 비밀번호 변경
-
-![비밀번호 변경](https://github.com/hye1w/JINJUCOPICK/assets/105777703/45929545-bfff-4872-ac9a-ffbbf502b0ed.gif)
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710358-43ce8687-71f7-44a4-8718-33455b071210.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjk2MTEsIm5iZiI6MTcyMjA2OTMxMSwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzU4LTQzY2U4Njg3LTcxZjctNDRhNC04NzE4LTMzNDU1YjA3MTIxMC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODM1MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mODUxNDI2MDNiZWRiNGNkY2Y4ZmM4NDM3ZmMxZTgzMjRlN2M4OGVmYjE2YjViMDYzMGVmZWFjMThiMmFlMjdiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.cE9fcTobtqz6x9lxoOv3z3OdZ0hDN-V_231HGEvkgwU" width="500px"></img>
 
 ### · 회원가입
-- 회원가입
-
-![회원가입](https://github.com/hye1w/JINJUCOPICK/assets/105777703/5262039d-285b-497a-a41f-2b9a16511f2a.gif)
-
+<img src = "https://private-user-images.githubusercontent.com/105777703/352710362-24790317-eb1c-46e6-8c54-14744c4eef6c.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIwNjk2MTEsIm5iZiI6MTcyMjA2OTMxMSwicGF0aCI6Ii8xMDU3Nzc3MDMvMzUyNzEwMzYyLTI0NzkwMzE3LWViMWMtNDZlNi04YzU0LTE0NzQ0YzRlZWY2Yy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcyN1QwODM1MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04M2FjYjViZjExMThmZTRmMzk5NWJiMGQ1NWUyYzg1NTY5ZGU5ZjQzN2JiY2MxN2VlMjkzZTIzZDU5ZDE4NzQ5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.Jqp3YjX62tbuZXfPMj7n5nE3PVU7TaQsHyKdSjWZUkE" width="500px"></img>
 
 ## 📁 카페 데이터
 - [진주 카페 데이터](https://github.com/hye1w/JINJUCOPICK/files/11724534/cafe.csv)
