@@ -45,32 +45,32 @@
 
 ### · 메인 페이지
 
-<img src = "https://github.com/user-attachments/assets/32c4e47c-a83a-4c9f-9b1d-f345f0053bfb" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/60a7aeec-ce19-4005-8beb-550878fcc366" width="500px"></img>
 
 ### · 필터링 결과 페이지
 
-<img src = "https://github.com/user-attachments/assets/3f6816f2-c42f-4d3c-ae28-2c9f799fbf4f" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/ee3ba7b8-d59c-4487-9498-831867c266e0" width="500px"></img>
 
 ### · 카페 상세 정보 페이지
 
-<img src = "https://github.com/user-attachments/assets/168c198e-4220-4710-99a8-59deb79c9fd6" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/6d373559-0b4d-4d85-9cb6-73ee6f8d9877" width="500px"></img>
 
 ### · 기프티콘
 
-<img src = "https://github.com/user-attachments/assets/6f96ed4f-90b3-4028-9c99-3bf2e651a96b" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/a249e7fe-00e2-468c-a9f1-f512e1a536cb" width="500px"></img>
 
 ### · 커뮤니티
-<img src = "https://github.com/user-attachments/assets/7a0a24e1-9438-45c9-a7db-91ddd1db24f2" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/6943cafe-e5e2-4854-82a9-267c43d59afa" width="500px"></img>
 
-<img src = "https://github.com/user-attachments/assets/0b5f8678-a25b-4492-8475-2b57b3206948" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/00c4ff4e-73a9-4302-9311-19458f15546f" width="500px"></img>
 
-<img src = "https://github.com/user-attachments/assets/428d23bb-e818-47af-a526-1d511551e423" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/a64c8535-a1aa-4932-b5de-bef7ea253b1a" width="500px"></img>
 
 ### · 마이페이지 
-<img src = "https://github.com/user-attachments/assets/9f4c2e47-2357-4285-9bf6-82d2e03c5e4f" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/ac47f257-3123-4ea6-8299-2e69cbe5191f" width="500px"></img>
 
 ### · 회원가입
-<img src = "https://github.com/user-attachments/assets/1bdc4461-6d81-48ce-9408-d5134de700fd" width="500px"></img>
+<img src = "https://github.com/user-attachments/assets/97ff6bdb-52b7-4f78-9467-1512cc1b7a65" width="500px"></img>
 
 ## 📁 카페 데이터
 - [진주 카페 데이터](https://github.com/hye1w/JINJUCOPICK/files/11724534/cafe.csv)
